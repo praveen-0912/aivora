@@ -43,7 +43,7 @@ def client(tmp_path, monkeypatch):
 
 def test_root_does_not_expose_the_api(client):
     body = client.get("/").json()
-    assert body == {"service": "Indigo.ai API", "status": "running"}
+    assert body == {"service": "AIVORA API", "status": "running"}
     assert "/api/" not in str(body)
 
 

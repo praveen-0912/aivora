@@ -22,7 +22,7 @@ async def lifespan(app: FastAPI):
     purge_expired_archives()
     yield
 
-app = FastAPI(title="Indigo.ai API", description="AI-powered message analysis and contextual assistance.", version="4.0.0", lifespan=lifespan)
+app = FastAPI(title="AIVORA API", description="AI-powered message analysis and contextual assistance.", version="4.0.0", lifespan=lifespan)
 # Only the frontends listed in ALLOWED_ORIGINS (backend/.env or Render settings) may call the API.
 app.add_middleware(CORSMiddleware, allow_origins=ALLOWED_ORIGINS, allow_credentials=False, allow_methods=["GET", "POST", "PATCH", "DELETE"], allow_headers=["Content-Type"])
 
@@ -39,7 +39,7 @@ def health_check(response: Response):
         response.status_code = 503
     return {
         "status": "ok" if database_ok else "error",
-        "message": "Indigo.ai API is running",
+        "message": "AIVORA API is running",
         "database": database_kind(),
         "database_ok": database_ok,
         "groq_api_key_configured": bool(GROQ_API_KEY),

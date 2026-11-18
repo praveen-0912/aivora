@@ -1,8 +1,8 @@
-# Indigo.ai
+# AIVORA
 
 _Enterprise Structured Ingestion Firewall_
 
-A beginner-friendly AI project. You chat with **Indigo.ai**, an AI assistant in a React web app, and for every message the backend:
+A beginner-friendly AI project. You chat with *AIVORA**, an AI assistant in a React web app, and for every message the backend:
 
 1. **Week 1 – Understands it.** An LLM sorts the message into a fixed category (payment issue, order tracking, greeting…) and returns structured JSON. Pydantic checks that JSON before anything else uses it.
 2. **Week 2 – Answers it.** A second LLM call uses that checked JSON to write a helpful reply in Markdown.
@@ -137,7 +137,7 @@ The database is in `.gitignore`, so your chats are never pushed to GitHub.
 
 | Method | Path | What it does |
 |---|---|---|
-| `GET` | `/` | Simple status: `{"service": "Indigo.ai API", "status": "running"}` |
+| `GET` | `/` | Simple status: `{"service": "AIVORA API", "status": "running"}` |
 | `GET` | `/health` | Server status: `database_ok`, `groq_api_key_configured`, `model`. Never calls the LLM or shows secrets. |
 | `GET` | `/docs` | Interactive documentation: try every endpoint in the browser |
 | `POST` | `/api/analyze` | Send `{ "message": "...", "session_id": "optional" }`; returns intent, risk, priority, the Markdown answer and `session_id` |
@@ -222,7 +222,7 @@ If you change `VITE_API_URL` later, **redeploy** on Vercel: Vite bakes it into t
 
 | Check | Expected |
 |---|---|
-| `https://<render-url>/` | `{"service": "Indigo.ai API", "status": "running"}` |
+| `https://<render-url>/` | `{"service": "AIVORA API", "status": "running"}` |
 | `https://<render-url>/health` | `"status": "ok"`, `"database_ok": true`, `"groq_api_key_configured": true` |
 | `https://<render-url>/docs` | Interactive API page |
 | `https://<render-url>/api/conversations` | `{"items": [...]}` |

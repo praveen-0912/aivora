@@ -54,7 +54,7 @@ uvicorn app.main:app --reload --port 8000
 
 | Open this | What you get |
 |---|---|
-| http://127.0.0.1:8000/ | `{"service": "Indigo.ai API", "status": "running"}` |
+| http://127.0.0.1:8000/ | `{"service": "AIVORA API", "status": "running"}` |
 | http://127.0.0.1:8000/health | Status: `database_ok`, `groq_api_key_configured`, `model` |
 | http://127.0.0.1:8000/docs | Interactive page to try every endpoint |
 | http://127.0.0.1:8000/api/conversations | Your saved conversations |
@@ -238,7 +238,7 @@ Deletes the conversation and all its messages. Returns `204`, or `404` if it doe
 ### `GET /`
 
 ```json
-{ "service": "Indigo.ai API", "status": "running" }
+{ "service": "AIVORA API", "status": "running" }
 ```
 
 ### `GET /health`
@@ -246,7 +246,7 @@ Deletes the conversation and all its messages. Returns `204`, or `404` if it doe
 ```json
 {
   "status": "ok",
-  "message": "Indigo.ai API is running",
+  "message": "AIVORA API is running",
   "database": "sqlite",
   "database_ok": true,
   "groq_api_key_configured": true,
